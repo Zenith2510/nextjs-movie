@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-interface Genre {
-  id: number;
-  name: string;
-}
+// interface Genre {
+//   id: number;
+//   name: string;
+// }
+type Genre = object;
 
 interface SidebarProps {
   genres: Genre[];
@@ -27,7 +28,7 @@ export default async function sidebar() {
     <aside className="w-[220px] flex flex-col gap-1">
       <Button className="justify-start" variant="outline" asChild>
         <Link href="/">All Movies</Link>
-      </Button>{" "}
+      </Button>
       {genres.map((genre) => {
         return (
           <Button
