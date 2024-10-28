@@ -18,10 +18,11 @@ type Params = {
   };
 };
 export default async function Home({ params }: Params) {
-  const byGenres = await fetchMovies(params.id);
+  const { id, name } = await params;
+  const byGenres = await fetchMovies(id);
   return (
     <>
-      <h3 className="font-bold border-b mb-4 pb-2">{params.name}</h3>
+      <h3 className="font-bold border-b mb-4 pb-2">{name}</h3>
       <Movies movies={byGenres.results} />
     </>
   );
