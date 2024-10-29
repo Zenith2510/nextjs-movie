@@ -26,7 +26,7 @@ export default function Movies({ movies }: MoviesProps) {
                     width={200}
                     height={300}
                     src={poster + movie.poster_path}
-                    className="w-full hover:scale-105 transition-all"
+                    className="w-[200px] h-[300px]  hover:scale-105 transition-all"
                   />
                 </Link>
               ) : (

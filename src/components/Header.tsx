@@ -14,11 +14,9 @@ export default function header() {
                     rounded  border-slate-30 px-4 py-2 my-4"
     >
       <h1 className="font-bold text-lg">
-        {" "}
         <Link href="/">Next Movies</Link>
       </h1>
       <form action={search} className="flex gap-2">
-        {" "}
         <Input type="text" name="q" placeholder="Search Movies" />
         <Button type="submit">Search</Button>{" "}
       </form>
