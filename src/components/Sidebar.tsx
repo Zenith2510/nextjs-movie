@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-// interface Genre {
-//   id: number;
-//   name: string;
-// }
-type Genre = object;
+interface Genre {
+  id: number;
+  name: string;
+}
+// type Genre = object;
 
 interface SidebarProps {
   genres: Genre[];
@@ -13,11 +13,14 @@ interface SidebarProps {
 const token = process.env.TMDB_TOKEN;
 
 async function fetchGenres() {
-  const res = await fetch("https://api.themoviedb.org/3/genre/movie/list", {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const res = await fetch(
+    "https://api.themoviedb.org/3/genre/movie/list?language=en",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
 
   return await res.json();
 }
@@ -25,7 +28,7 @@ async function fetchGenres() {
 export default async function sidebar() {
   const { genres }: SidebarProps = await fetchGenres();
   return (
-    <aside className="w-[220px] flex flex-col gap-1">
+    <aside className="w-[220px] flex flex-col gap-1 ">
       <Button className="justify-start" variant="outline" asChild>
         <Link href="/">All Movies</Link>
       </Button>

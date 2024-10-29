@@ -18,9 +18,9 @@ export default function RootLayout({ children }: Props) {
       <body className={inter.className}>
         <div className="mx-4 m-auto">
           <Header />
-          <section className="flex gap-4 min-h-[500px]">
+          <section className="flex gap-4 min-h-[500px] ">
             <Sidebar />
-            <main className="border-l border-slate-300 px-4">{children}</main>
+            <main className="border-l border-slate-300 px-4 ">{children}</main>
           </section>
           <footer className="text-center py-4 text-slate-400 mt-4 border-t border-slate-300">
             <small className="text-xs">&copy; Copyright 2024</small>{" "}
